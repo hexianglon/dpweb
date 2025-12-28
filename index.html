@@ -1,44 +1,168 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <title>图片展示</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: fixed;
-        }
-        
-        body {
-            background-color: #ffffff;
-        }
-        
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+<meta charset="UTF-8">
+<title>科技感网页首页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: #05050a;
+  color:#e6e6ff;
+}
+
+/* 顶部导航 */
+header{
+  background: rgba(0,0,0,.6);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#7cd0ff;
+  letter-spacing:2px;
+}
+nav a{
+  text-decoration:none;
+  margin-left:28px;
+  color:#bfc7ff;
+  font-size:14px;
+}
+nav a:hover{
+  color:#69b8ff;
+}
+
+/* Banner 科技背景 */
+.banner{
+  text-align:center;
+  padding:130px 25px 150px;
+  background: radial-gradient(circle at 30% 20%, rgba(65,168,255,.3), transparent 50%),
+              radial-gradient(circle at 80% 40%, rgba(0,255,204,.3), transparent 50%),
+              linear-gradient(120deg,#06101f,#020413);
+}
+.banner h1{
+  font-size:48px;
+  margin:0;
+  letter-spacing:2px;
+}
+.banner p{
+  font-size:18px;
+  margin-top:12px;
+  opacity:.9;
+}
+
+/* 发光按钮 */
+.btn{
+  margin-top:30px;
+  padding:14px 40px;
+  border-radius:40px;
+  text-decoration:none;
+  display:inline-block;
+  font-size:15px;
+  letter-spacing:1px;
+  color:#fff;
+  background: linear-gradient(135deg,#00eaff,#0077ff);
+  box-shadow:0 0 25px rgba(0,162,255,.5);
+}
+.btn:hover{
+  box-shadow:0 0 40px rgba(0,204,255,.8);
+}
+
+/* 内容卡片区域 */
+.section{
+  max-width:1200px;
+  margin:-80px auto 80px;
+  padding:0 25px;
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
+.card{
+  flex:1;
+  min-width:260px;
+  padding:28px;
+  border-radius:14px;
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 0 25px rgba(0,0,0,.6);
+  text-align:center;
+  transition:.4s;
+}
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow:0 0 35px rgba(0,200,255,.4);
+}
+.card h3{
+  margin-top:0;
+  color:#7cd0ff;
+}
+.card p{
+  color:#aeb8ff;
+}
+
+/* 底部 */
+footer{
+  text-align:center;
+  padding:35px 20px;
+  background:#020408;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:#8a94ff;
+}
+</style>
 </head>
+
 <body>
-    <img src="https://cas-bridge.xethub.hf.co/xet-bridge-us/694fd5a141db192308716e5f/948ced95a32aeb46515766f63a1663e2196e9af61e944ed6ca4bb0003cb06405?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251228T115841Z&X-Amz-Expires=3600&X-Amz-Signature=99df1fc07459578790ed1c17219ec08b7216bf7d8122d24788ef730fe12b3267&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=689dd4a0f522165a63f9478a&response-content-disposition=inline%3B+filename*%3DUTF-8%27%2701.jpg%3B+filename%3D%2201.jpg%22%3B&response-content-type=image%2Fjpeg&x-id=GetObject&Expires=1766926721&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NjkyNjcyMX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OTRmZDVhMTQxZGIxOTIzMDg3MTZlNWYvOTQ4Y2VkOTVhMzJhZWI0NjUxNTc2NmY2M2ExNjYzZTIxOTZlOWFmNjFlOTQ0ZWQ2Y2E0YmIwMDAzY2IwNjQwNSoifV19&Signature=WeN46ER0UjmiW4n7ggaUcv12s3589U%7EA8Swux6NGEjUHazvsSSJwijRsKI5k77Fbwf1BgWECQxao02ujJdJpPm9z%7EXQ1COGcFEExX49yo1J88tNbed2XsD1MT4g3qOq%7EEtVI%7E4cAEvRMSQjyMhwdezm1%7EAeLr-sfBMRbv9mqTzTJ4Cwlu4kOJhSKr3-8z9boP6KIM-QXWdgawPiY4HV5YotBS4o39SUkqKcL6HIBOYKdhEVX1-YhvB0XLZfskuJSrBYFD%7Eh5PTHfF9tzL7wKYCIk%7EJ46WPqU0yJfI%7Ez3WIwBG8RSH7D3fnD1IFIplJa2zfdjTkzL3CL8owXMa9MZJw__&Key-Pair-Id=K2L8F4GPSG1IFC" alt="图片">
+
+<header>
+  <div class="nav">
+    <div class="logo">TECH WEB</div>
+    <nav>
+      <a href="#">首页</a>
+      <a href="#">产品</a>
+      <a href="#">解决方案</a>
+      <a href="#">技术中心</a>
+      <a href="#">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+<section class="banner">
+  <h1>未来科技 · 数字世界入口</h1>
+  <p>以科技为灵魂，为你打造极具未来感的网页体验</p>
+  <a class="btn" href="#">立即探索</a>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h3>智能科技</h3>
+    <p>创新科技设计结构，呈现极具未来感的视觉体验。</p>
+  </div>
+
+  <div class="card">
+    <h3>纯静态HTML</h3>
+    <p>无需JS与框架，轻量高速，简单即力量。</p>
+  </div>
+
+  <div class="card">
+    <h3>自适应布局</h3>
+    <p>无论电脑或手机，都能完美展示科技之美。</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 科技感网页设计 · ALL RIGHTS RESERVED
+</footer>
+
 </body>
 </html>
-
-
